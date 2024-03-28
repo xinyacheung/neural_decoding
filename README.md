@@ -1,11 +1,12 @@
 # This repository is for the paper "Decoding region-level visual functions from invasive EEG monkey data"
 
 
-#### Software Dependencies
+#### Software & toolbox
 
-* Python (>= 3.8)
-* NumPy (>= 1.21.2)
-* Pytorch (>= 1.10.0)
-* Tqdm
-* Pytorch
-* Wandb
+* python (>= 3.8)
+* numpy
+* pytorch
+* tqdm
+* pytorch
+* pytorch_ssim
+* wandb
