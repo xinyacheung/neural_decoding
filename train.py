@@ -66,7 +66,7 @@ def train_model(config):
     train_dataloader, test_dataloader = load_dataloader(config)
     model = build_decoder(neuron_dim=config["num_neurons"]).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=config['lr'], eps=1e-9)
-    scheduler =torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.9, last_epoch=-1)
+    scheduler =torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.85, last_epoch=-1)
     loss_fn1 = ssim
     loss_fn2 = nn.MSELoss()
     initial_epoch = 0
