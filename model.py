@@ -14,7 +14,7 @@ class spike_decode(nn.Module):
         x = self.linear1(x)
         x = self.bn(x)       
         x = self.linear2(x)
-        x = self.to_image(x) #[bs, D, C, H, W]
+        x = self.to_image(x)
         
         return x.permute(0,2,1,3,4) #[bs, C, D, H, W]
 
@@ -59,7 +59,6 @@ class unet_decode(nn.Module):
         )
     
     def forward(self, x):
-        # x = [bs, C, D, H, W]
         x = self.unet_encoder(x)
         x = self.unet_decoder(x)
         return x
@@ -74,7 +73,6 @@ class Decoder(nn.Module):
     def decode(self, x):
         # [bs, neurons, time] -> [bs, neurons, embedding_dims] -> [bs, C3, D45, H32, W32]
         x = self.spike_decoder(x)
-        #  [bs, C3, D45, H32, W32] ->  [bs, C3, D45, H32, W32]
         x = self.video_decoder(x)
         x = (self.tanh(x)+1)/2 # Tanh scaled
         return x

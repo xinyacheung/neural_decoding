@@ -139,7 +139,7 @@ if __name__ == '__main__':
     config = get_config()
     
     wandb.init(
-        project="..",
+        project="neural_decoding",
         config=config
     )
     

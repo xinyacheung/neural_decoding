@@ -10,7 +10,7 @@ def get_config():
     "num_epochs":50,
     "seed":1233,
     "pre_train":False,
-    "device":"cuda:2",
+    "device":"cuda:1",
     "model_folder":"weights",
     "model_basename":'train_16_',
     "loss_folder":'loss'
